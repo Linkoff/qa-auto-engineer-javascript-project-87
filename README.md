@@ -2,9 +2,7 @@
 
 Утилита, определяющая разницу между двумя структурами данных.
 
-[![Actions Status](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions)
-
-[![Node CI](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/ci.yml/badge.svg)](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/ci.yml)
+[![Actions Status](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions) [![Node CI](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/ci.yml/badge.svg)](https://github.com/Linkoff/qa-auto-engineer-javascript-project-87/actions/workflows/ci.yml)
 
 ## Возможности утилиты
 
