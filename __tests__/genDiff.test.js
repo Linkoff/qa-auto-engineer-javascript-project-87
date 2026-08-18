@@ -18,7 +18,7 @@ describe('genDiff for flat JSON files', () => {
       getFixturePath('file2.json'),
     )
 
-    const expected = fs.readFileSync(getFixturePath('expected1.txt'), 'utf-8')
+    const expected = fs.readFileSync(getFixturePath('expected_01.txt'), 'utf-8')
 
     expect(result).toBe(expected)
   })
@@ -29,7 +29,7 @@ describe('genDiff for flat JSON files', () => {
       getFixturePath('file4.json'),
     )
 
-    const expected = fs.readFileSync(getFixturePath('expected2.txt'), 'utf-8')
+    const expected = fs.readFileSync(getFixturePath('expected_02.txt'), 'utf-8')
 
     expect(result).toBe(expected)
   })
@@ -40,7 +40,7 @@ describe('genDiff for flat JSON files', () => {
       getFixturePath('file6.json'),
     )
 
-    const expected = fs.readFileSync(getFixturePath('expected3.txt'), 'utf-8')
+    const expected = fs.readFileSync(getFixturePath('expected_03.txt'), 'utf-8')
 
     expect(result).toBe(expected)
   })
@@ -51,13 +51,59 @@ describe('genDiff for flat JSON files', () => {
       getFixturePath('empty2.json'),
     )
 
-    const expected = fs.readFileSync(getFixturePath('expected4.txt'), 'utf-8')
+    const expected = fs.readFileSync(getFixturePath('expected_04.txt'), 'utf-8')
+
+    expect(result).toBe(expected)
+  })
+})
+
+describe('genDiff for flat yaml files', () => {
+  it('should return unchanged keys for identical files', () => {
+    const result = genDiff(
+      getFixturePath('file1.yml'),
+      getFixturePath('file2.yml'),
+    )
+
+    const expected = fs.readFileSync(getFixturePath('expected_01.txt'), 'utf-8')
 
     expect(result).toBe(expected)
   })
 
-  it('should throw error for unsupported file format', () => {
-    const filepath = getFixturePath('unsupported.txt')
-    expect(() => genDiff(filepath, filepath)).toThrow('Unsupported file format')
+  it('should handle case with one added and one removed key', () => {
+    const result = genDiff(
+      getFixturePath('file3.yml'),
+      getFixturePath('file4.yml'),
+    )
+
+    const expected = fs.readFileSync(getFixturePath('expected_02.txt'), 'utf-8')
+
+    expect(result).toBe(expected)
   })
+
+  it('should detect changed value for existing key', () => {
+    const result = genDiff(
+      getFixturePath('file5.yml'),
+      getFixturePath('file6.yml'),
+    )
+
+    const expected = fs.readFileSync(getFixturePath('expected_03.txt'), 'utf-8')
+
+    expect(result).toBe(expected)
+  })
+
+  it('should handle case where both input files are empty', () => {
+    const result = genDiff(
+      getFixturePath('empty1.yml'),
+      getFixturePath('empty2.yml'),
+    )
+
+    const expected = fs.readFileSync(getFixturePath('expected_04.txt'), 'utf-8')
+
+    expect(result).toBe(expected)
+  })
+})
+
+it('should throw error for unsupported file format', () => {
+  const filepath = getFixturePath('unsupported.txt')
+  expect(() => genDiff(filepath, filepath)).toThrow('Unsupported file format')
 })
