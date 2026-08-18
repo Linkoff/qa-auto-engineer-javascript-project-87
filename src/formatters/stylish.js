@@ -11,8 +11,6 @@ export default function stylish(diff) {
         return `  ${key}: ${oldValue}`
       case 'changed':
         return [`- ${key}: ${oldValue}`, `+ ${key}: ${newValue}`]
-      default:
-        return ''
     }
   })
 
