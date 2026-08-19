@@ -6,9 +6,16 @@
 
 ## Возможности утилиты
 
-- Поддержка разных входных форматов: yaml, json
-- Генерация отчёта в виде plain text, stylish и json
+- Поддержка входных форматов: `yaml`, `json`
+- Генерация отчёта в форматах:
+  - `stylish` — наглядный вывод с `+` и `-`
+  - `plain` — текстовое описание изменений
+  - `json` — машиночитаемый вывод
+- Выбор формата через `-f` или `--format`
+- Встроенная справка `-h` и вывод версии `-V`
 
 ## Пример использования
 
-[![asciicast](https://asciinema.org/a/HzfqH42qHhZYdbK5.svg)](https://asciinema.org/a/HzfqH42qHhZYdbK5)
+По умолчанию используется формат `stylish` (без указания `-f` или `--format`).
+
+[![asciicast](https://asciinema.org/a/GzWG1VC2YMlS6Mmu.svg)](https://asciinema.org/a/GzWG1VC2YMlS6Mmu)
