@@ -1,0 +1,2 @@
+Property 'timeout' was removed
+Property 'verbose' was added with value: true
