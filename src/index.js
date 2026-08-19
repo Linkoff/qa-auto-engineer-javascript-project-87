@@ -1,5 +1,5 @@
 import parseFile from './parsers.js'
-import stylish from './formatters/stylish.js'
+import getFormatter from './formatters/index.js'
 
 const buildDiff = (data1, data2) => {
   const keys1 = Object.keys(data1)
@@ -23,9 +23,10 @@ const buildDiff = (data1, data2) => {
   }))
 }
 
-export default function genDiff(filepath1, filepath2) {
+export default function genDiff(filepath1, filepath2, formatName = 'stylish') {
   const data1 = parseFile(filepath1)
   const data2 = parseFile(filepath2)
   const diff = buildDiff(data1, data2)
-  return stylish(diff)
+  const formatter = getFormatter(formatName)
+  return formatter(diff)
 }
