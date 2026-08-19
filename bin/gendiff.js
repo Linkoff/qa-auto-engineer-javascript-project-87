@@ -10,9 +10,8 @@ program
   .argument('<filepath2>')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format', 'stylish')
-  // eslint-disable-next-line no-unused-vars
   .action((filepath1, filepath2, options) => {
-    const result = genDiff(filepath1, filepath2)
+    const result = genDiff(filepath1, filepath2, options.format)
     console.log(result)
   })
   .parse(process.argv)
