@@ -14,6 +14,28 @@
 - Выбор формата через `-f` или `--format`
 - Встроенная справка `-h` и вывод версии `-V`
 
+## Установка
+
+### Для пользователя (глобальная команда)
+
+```bash
+git clone https://github.com/Linkoff/qa-auto-engineer-javascript-project-87.git
+cd qa-auto-engineer-javascript-project-87
+npm install
+npm link
+```
+
+### Для разработки
+
+Если вы хотите внести изменения, запустить тесты или проверить покрытие:
+
+```bash
+make install          # установка зависимостей
+make lint             # проверка кода линтером
+make test             # запуск тестов
+make test-coverage    # запуск тестов с покрытием
+```
+
 ## Пример использования
 
 По умолчанию используется формат `stylish` (без указания `-f` или `--format`).
