@@ -18,4 +18,4 @@
 
 По умолчанию используется формат `stylish` (без указания `-f` или `--format`).
 
-[![asciicast](https://asciinema.org/a/GzWG1VC2YMlS6Mmu.svg)](https://asciinema.org/a/GzWG1VC2YMlS6Mmu)
+[![asciicast](https://asciinema.org/a/IqYbJjVJ5s3Ivpen.svg)](https://asciinema.org/a/IqYbJjVJ5s3Ivpen)
